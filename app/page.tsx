@@ -1,15 +1,26 @@
 "use client";
-
+import { Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Globe, ShieldCheck, Truck, MapPin, Mail, Phone } from "lucide-react";
 
-const floatVariants = {
-  rest: { y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  hover: { y: -12, transition: { duration: 0.4, ease: "easeOut" } },
+const floatVariants: Variants = {
+  rest: {
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  },
+  hover: {
+    y: -12,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
 };
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#050505] to-black text-gray-100 overflow-x-hidden">
