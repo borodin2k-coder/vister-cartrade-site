@@ -1,33 +1,27 @@
 "use client";
-import { Variants } from "framer-motion";
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Globe, ShieldCheck, Truck, MapPin, Mail, Phone } from "lucide-react";
 
-const floatVariants: Variants = {
+const floatVariants = {
   rest: {
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
   hover: {
     y: -12,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#050505] to-black text-gray-100 overflow-x-hidden">
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-black/70 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-          {/* Самая первая текстовая версия логотипа */}
           <div className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-gray-300 via-blue-400 to-gray-300 bg-clip-text text-transparent">
             Vister CarTrade
           </div>
@@ -36,7 +30,9 @@ export default function Home() {
             {["About", "Markets", "Expertise", "Process", "License", "Contact"].map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={item === "License" ? "/license.jpg" : `#${item.toLowerCase()}`}
+                target={item === "License" ? "_blank" : undefined}
+                rel={item === "License" ? "noopener noreferrer" : undefined}
                 className="hover:text-blue-400 transition-colors relative group"
               >
                 {item}
@@ -73,7 +69,7 @@ export default function Home() {
             transition={{ duration: 1.4, delay: 0.3 }}
             className="text-2xl md:text-3xl font-light text-gray-300 mb-12 max-w-4xl mx-auto"
           >
-            International Car Broker • Premium & Luxury Vehicles from USA, UAE, Europe • Discreet Worldwide Delivery
+            International Car Broker • Premium & Luxury Vehicles from USA, UAE, Europe, Georgia • Discreet Worldwide Delivery
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -81,7 +77,10 @@ export default function Home() {
             transition={{ duration: 1.4, delay: 0.6 }}
             className="flex flex-wrap justify-center gap-6"
           >
-            <Button className="bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 px-12 py-7 text-lg rounded-3xl shadow-2xl shadow-blue-900/40 hover:shadow-blue-700/60 transition-all duration-500">
+            <Button 
+              className="bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 px-12 py-7 text-lg rounded-3xl shadow-2xl shadow-blue-900/40 hover:shadow-blue-700/60 transition-all duration-500"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            >
               Get in Touch <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
             <Button
@@ -107,9 +106,9 @@ export default function Home() {
               Who We Are
             </h2>
             <p className="text-xl leading-relaxed text-gray-300 text-center max-w-4xl mx-auto mb-10">
-              Vister CarTrade — международный брокер по автомобилям с headquarters в Dubai, UAE.  
-              Специализируемся на закупке и поставке премиум и luxury автомобилей из ключевых рынков: США, ОАЭ, Европа.  
-              International vehicle trading made easy — конфиденциально, точно, глобально.
+              Vister CarTrade is an international car broker with headquarters in Dubai, UAE.  
+              We specialize in sourcing and supplying premium and luxury vehicles from key markets: USA, UAE, Europe, Georgia.  
+              International vehicle trading made easy — confidentially, precisely, globally.
             </p>
             <div className="text-center">
               <Button
@@ -125,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Markets */}
+      {/* Key Sourcing Markets */}
       <section id="markets" className="py-32 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
@@ -135,18 +134,18 @@ export default function Home() {
             {[
               {
                 title: "United States",
-                desc: "Самый широкий выбор новых и малопробежных автомобилей премиум-сегмента по оптимальным ценам.",
+                desc: "The widest selection of new and low-mileage premium vehicles at optimal prices.",
                 img: "https://4kwallpapers.com/images/wallpapers/ram-dakota-1920x1080-23846.jpg",
               },
               {
                 title: "United Arab Emirates",
-                desc: "Эксклюзивные комплектации, последние модели и преимущества региона.",
-                img: "https://i0.wp.com/moparinsiders.com/wp-content/uploads/2022/01/2022-Ram-2500-Limited-Night-Edition-Mega-Cab-4x4.-Ram-Mexico-5-scaled.jpg?fit=2560%2C1439&ssl=1",
+                desc: "Exclusive configurations, latest models, and regional advantages.",
+                img: "https://img3.akspic.ru/previews/3/1/3/2/2/122313/122313-avtomobil-shina-obod-dzhip-jeep_wrangler-x750.jpg",
               },
               {
                 title: "Europe",
-                desc: "Высокие спецификации немецких, британских и итальянских брендов с полным соответствием нормам.",
-                img: "https://sherrychrysler.com/wp-content/uploads/2020/10/2021-ram-1500-laramie-night-edition-4x4-crew-cab-for-sale-dayton-ohio-29981T-1-762x456.jpg",
+                desc: "High specifications of German, British, and Italian brands with full compliance.",
+                img: "https://di-uploads-pod16.dealerinspire.com/edvoylescdjr/uploads/2021/04/2020-dodge-muscle-vlp-durango-srt-hellcat.jpg.image_.2880_1.jpg",
               },
             ].map((market, i) => (
               <motion.div
@@ -235,7 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact — кнопка Get in Touch прокручивает сюда */}
       <section id="contact" className="py-32">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -272,10 +271,10 @@ export default function Home() {
             <div className="text-center mt-12 text-gray-400 space-y-3">
               <p>Headquarters: Dubai, UAE</p>
               <p className="flex items-center justify-center gap-2">
-                <Mail className="h-5 w-5 text-blue-500" /> info@vistercartrade.com
+                <Mail className="h-5 w-5 text-blue-500" /> info@vistercar.com
               </p>
               <p className="flex items-center justify-center gap-2">
-                <Phone className="h-5 w-5 text-blue-500" /> +971-XX-XXX-XXXX
+                <Phone className="h-5 w-5 text-blue-500" /> +971 52 559 7871
               </p>
             </div>
           </motion.div>
