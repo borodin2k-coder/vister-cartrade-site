@@ -1,18 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Globe, ShieldCheck, Truck, MapPin, Mail, Phone } from "lucide-react";
 
-const floatVariants = {
+const floatVariants: Variants = {
   rest: {
     y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: {
+      duration: 0.5,
+      ease: "easeOut",
+    },
   },
   hover: {
     y: -12,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
   },
 };
 
@@ -234,7 +240,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact — кнопка Get in Touch прокручивает сюда */}
+      {/* Contact */}
       <section id="contact" className="py-32">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
