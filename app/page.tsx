@@ -8,17 +8,11 @@ import { ArrowRight, Globe, ShieldCheck, Truck, MapPin, Mail, Phone } from "luci
 const floatVariants: Variants = {
   rest: {
     y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
   hover: {
     y: -12,
-    transition: {
-      duration: 0.4,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.4, ease: "easeOut" },
   },
 };
 
@@ -49,7 +43,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
+      {/* Hero – без Georgia */}
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10" />
@@ -75,7 +69,7 @@ export default function Home() {
             transition={{ duration: 1.4, delay: 0.3 }}
             className="text-2xl md:text-3xl font-light text-gray-300 mb-12 max-w-4xl mx-auto"
           >
-            International Car Broker • Premium & Luxury Vehicles from USA, UAE, Europe, Georgia • Discreet Worldwide Delivery
+            International Car Broker • Premium & Luxury Vehicles from USA, UAE, Europe • Discreet Worldwide Delivery
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -99,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
+      {/* About – без Georgia */}
       <section id="about" className="py-32 relative z-10">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -113,7 +107,7 @@ export default function Home() {
             </h2>
             <p className="text-xl leading-relaxed text-gray-300 text-center max-w-4xl mx-auto mb-10">
               Vister CarTrade is an international car broker with headquarters in Dubai, UAE.  
-              We specialize in sourcing and supplying premium and luxury vehicles from key markets: USA, UAE, Europe, Georgia.  
+              We specialize in sourcing and supplying premium and luxury vehicles from key markets: USA, UAE, Europe.  
               International vehicle trading made easy — confidentially, precisely, globally.
             </p>
             <div className="text-center">
@@ -130,7 +124,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Sourcing Markets */}
+      {/* Key Sourcing Markets – картинки поменяны местами US и UAE */}
       <section id="markets" className="py-32 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
@@ -141,12 +135,12 @@ export default function Home() {
               {
                 title: "United States",
                 desc: "The widest selection of new and low-mileage premium vehicles at optimal prices.",
-                img: "https://4kwallpapers.com/images/wallpapers/ram-dakota-1920x1080-23846.jpg",
+                img: "https://img3.akspic.ru/previews/3/1/3/2/2/122313/122313-avtomobil-shina-obod-dzhip-jeep_wrangler-x750.jpg", // Jeep Wrangler теперь в US
               },
               {
                 title: "United Arab Emirates",
                 desc: "Exclusive configurations, latest models, and regional advantages.",
-                img: "https://img3.akspic.ru/previews/3/1/3/2/2/122313/122313-avtomobil-shina-obod-dzhip-jeep_wrangler-x750.jpg",
+                img: "https://4kwallpapers.com/images/wallpapers/ram-dakota-1920x1080-23846.jpg", // RAM теперь в UAE
               },
               {
                 title: "Europe",
@@ -240,7 +234,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact */}
+      {/* Contact Us */}
       <section id="contact" className="py-32">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
@@ -250,7 +244,7 @@ export default function Home() {
             className="bg-gradient-to-br from-[#0d0d0d] to-black border border-gray-800/30 rounded-3xl p-12 shadow-[0_25px_70px_rgba(0,0,0,0.9),inset_0_2px_12px_rgba(255,255,255,0.04)] backdrop-blur-sm"
           >
             <h2 className="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
-              Let's Connect
+              Contact Us
             </h2>
 
             <form className="space-y-6 max-w-lg mx-auto">
@@ -276,6 +270,9 @@ export default function Home() {
 
             <div className="text-center mt-12 text-gray-400 space-y-3">
               <p>Headquarters: Dubai, UAE</p>
+              <p>Dubai Silicon Oasis</p>
+              <p>IFZA Properties</p>
+              <p>DSO-IFZA</p>
               <p className="flex items-center justify-center gap-2">
                 <Mail className="h-5 w-5 text-blue-500" /> info@vistercar.com
               </p>
