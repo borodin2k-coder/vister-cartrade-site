@@ -65,10 +65,7 @@ export default function Home() {
             className="absolute right-0 top-0 h-full w-3/4 bg-gradient-to-b from-[#0d0d0d] to-black border-l border-gray-800 p-8 flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              className="self-end text-white mb-10"
-              onClick={() => setIsMenuOpen(false)}
-            >
+            <button className="self-end text-white mb-10" onClick={() => setIsMenuOpen(false)}>
               <X size={32} />
             </button>
 
@@ -91,7 +88,7 @@ export default function Home() {
       )}
 
       {/* Hero */}
-      <section className="relative h-screen flex items-center justify-center pt-16 md:pt-20">
+      <section className="relative h-screen flex items-center justify-center pt-32 md:pt-40">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10" />
           <img
@@ -106,7 +103,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4 }}
-            className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-r from-gray-200 via-blue-400 to-gray-200 bg-clip-text text-transparent mb-6 md:mb-8"
+            className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter bg-gradient-to-r from-gray-200 via-blue-400 to-gray-200 bg-clip-text text-transparent mb-10 md:mb-12"
           >
             Global Vehicle Sourcing
           </motion.h1>
@@ -114,7 +111,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.4, delay: 0.3 }}
-            className="text-lg sm:text-xl md:text-3xl font-light text-gray-300 mb-8 md:mb-12 max-w-4xl mx-auto"
+            className="text-lg sm:text-xl md:text-3xl font-light text-gray-300 mb-12 md:mb-16 max-w-4xl mx-auto"
           >
             International Car Broker • Premium & Luxury Vehicles from USA, UAE, Europe • Discreet Worldwide Delivery
           </motion.p>
@@ -124,17 +121,12 @@ export default function Home() {
             transition={{ duration: 1.4, delay: 0.6 }}
             className="flex flex-wrap justify-center gap-4 sm:gap-6"
           >
+            {/* Get in Touch — темнее, градиент сохранён, но цвета сдвинуты в тёмную сторону */}
             <Button 
-              className="bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-lg rounded-3xl shadow-2xl shadow-blue-900/40 hover:shadow-blue-700/60 transition-all duration-500"
+              className="bg-gradient-to-r from-gray-700 via-blue-800 to-gray-700 hover:from-gray-800 hover:via-blue-900 hover:to-gray-800 text-white font-bold px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-lg rounded-3xl shadow-2xl shadow-blue-950/60 hover:shadow-blue-800/80 transition-all duration-500"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Get in Touch <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5" />
-            </Button>
-            <Button
-              variant="outline"
-              className="border-gray-700 bg-black/40 backdrop-blur-lg hover:bg-gray-900/60 px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-lg rounded-3xl"
-            >
-              View Our Expertise
             </Button>
           </motion.div>
         </div>
@@ -152,7 +144,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 md:mb-10 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
               Who We Are
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-300 text-center max-w-4xl mx-auto mb-0">
+            <p className="text-lg md:text-xl leading-relaxed text-gray-300 text-center max-w-4xl mx-auto">
               Vister CarTrade is an international car broker with headquarters in Dubai, UAE.  
               We specialize in sourcing and supplying premium and luxury vehicles from key markets: USA, UAE, Europe.  
               International vehicle trading made easy — confidentially, precisely, globally.
@@ -161,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Key Sourcing Markets */}
+      {/* Key Sourcing Markets – скруглённые картинки */}
       <section id="markets" className="py-16 md:py-32 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
@@ -193,11 +185,11 @@ export default function Home() {
                 transition={{ delay: i * 0.1 }}
               >
                 <Card className="bg-gradient-to-br from-[#111111] to-black border border-gray-800/40 rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.85),inset_0_1px_10px_rgba(255,255,255,0.03)] backdrop-blur-sm">
-                  <div className="h-64 md:h-72 overflow-hidden">
+                  <div className="h-64 md:h-72 overflow-hidden rounded-xl">
                     <img
                       src={market.img}
                       alt={market.title}
-                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105 rounded-xl"
                     />
                   </div>
                   <CardContent className="p-6 md:p-8">
