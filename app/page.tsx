@@ -276,7 +276,7 @@ export default function Home() {
               Contact Us
             </h2>
 
-            <form action="https://formspree.io/f/xxxxxxxx" method="POST" className="space-y-6 max-w-lg mx-auto">
+            <form action="https://formspree.io/f/xvzbwyep" method="POST" className="space-y-6 max-w-lg mx-auto">
               <input type="text" name="name" placeholder="Your Name" className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
               <input type="email" name="email" placeholder="Email" className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
               <textarea name="message" placeholder="Your Message" rows={5} className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
