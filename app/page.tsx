@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero – без Georgia */}
+      {/* Hero */}
       <section className="relative h-screen flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10" />
@@ -93,7 +93,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About – без Georgia */}
+      {/* About – без кнопки лицензии */}
       <section id="about" className="py-32 relative z-10">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
@@ -110,21 +110,11 @@ export default function Home() {
               We specialize in sourcing and supplying premium and luxury vehicles from key markets: USA, UAE, Europe.  
               International vehicle trading made easy — confidentially, precisely, globally.
             </p>
-            <div className="text-center">
-              <Button
-                asChild
-                className="bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 border border-blue-900/50 px-10 py-6 text-lg rounded-3xl shadow-lg shadow-blue-950/30 hover:shadow-blue-800/50 transition-all"
-              >
-                <a href="/license.jpg" target="_blank" rel="noopener noreferrer">
-                  View Official Trade License
-                </a>
-              </Button>
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Key Sourcing Markets – картинки поменяны местами US и UAE */}
+      {/* Key Sourcing Markets – US и UAE поменяны местами */}
       <section id="markets" className="py-32 bg-gradient-to-b from-black to-[#0a0a0a]">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-5xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-blue-500 bg-clip-text text-transparent">
@@ -135,12 +125,12 @@ export default function Home() {
               {
                 title: "United States",
                 desc: "The widest selection of new and low-mileage premium vehicles at optimal prices.",
-                img: "https://img3.akspic.ru/previews/3/1/3/2/2/122313/122313-avtomobil-shina-obod-dzhip-jeep_wrangler-x750.jpg", // Jeep Wrangler теперь в US
+                img: "https://img3.akspic.ru/previews/3/1/3/2/2/122313/122313-avtomobil-shina-obod-dzhip-jeep_wrangler-x750.jpg",
               },
               {
                 title: "United Arab Emirates",
                 desc: "Exclusive configurations, latest models, and regional advantages.",
-                img: "https://4kwallpapers.com/images/wallpapers/ram-dakota-1920x1080-23846.jpg", // RAM теперь в UAE
+                img: "https://4kwallpapers.com/images/wallpapers/ram-dakota-1920x1080-23846.jpg",
               },
               {
                 title: "Europe",
@@ -247,32 +237,21 @@ export default function Home() {
               Contact Us
             </h2>
 
-            <form className="space-y-6 max-w-lg mx-auto">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition"
-              />
-              <textarea
-                placeholder="Your Message"
-                rows={5}
-                className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition"
-              />
-              <Button className="w-full bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 py-7 text-lg rounded-3xl shadow-xl shadow-blue-900/40">
+            <form action="https://formspree.io/f/xvzbwyep" method="POST" className="space-y-6 max-w-lg mx-auto">
+              <input type="text" name="name" placeholder="Your Name" className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
+              <input type="email" name="email" placeholder="Email" className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
+              <textarea name="message" placeholder="Your Message" rows={5} className="w-full p-4 bg-black/50 border border-gray-700 rounded-xl focus:outline-none focus:border-blue-500 transition" />
+              <Button type="submit" className="w-full bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 py-7 text-lg rounded-3xl shadow-xl shadow-blue-900/40">
                 Send Inquiry
               </Button>
             </form>
 
             <div className="text-center mt-12 text-gray-400 space-y-3">
-              <p>Headquarters: Dubai, UAE</p>
-              <p>Dubai Silicon Oasis</p>
-              <p>IFZA Properties</p>
-              <p>DSO-IFZA</p>
+              <p>Vister Trade - FZCO</p>
+              <p>IFZA Business Park, DDP</p>
+              <p>342001</p>
+              <p>Dubai</p>
+              <p>United Arab Emirates</p>
               <p className="flex items-center justify-center gap-2">
                 <Mail className="h-5 w-5 text-blue-500" /> info@vistercar.com
               </p>
@@ -288,7 +267,7 @@ export default function Home() {
       <footer className="py-16 border-t border-gray-900/50 text-center text-gray-500 bg-black">
         <p>© 2026 Vister CarTrade. All rights reserved.</p>
         <a href="/license.jpg" target="_blank" className="text-blue-400 hover:text-blue-300 mt-4 inline-block">
-          Official Trade License
+          Trade License
         </a>
       </footer>
     </div>
